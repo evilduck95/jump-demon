@@ -1,0 +1,21 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes"
+type="SpriteFrames"
+uid="uid://dmokvl8c6jume"
+path="res://.godot/imported/fire asset yellow.aseprite-4233d14c8f2ec7a46d8c4c502b28b461.res"
+
+[deps]
+
+source_file="res://sprites/fire/fire asset yellow.aseprite"
+dest_files=["res://.godot/imported/fire asset yellow.aseprite-4233d14c8f2ec7a46d8c4c502b28b461.res"]
+
+[params]
+
+layer/exclude_layers_pattern=""
+layer/only_visible_layers=true
+sheet/sheet_type="columns"
+sheet/sheet_columns=12
+sheet/frame_padding=0
+sheet/scale=1
+animation/round_fps=true

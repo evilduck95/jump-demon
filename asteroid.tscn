@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://cue35dgmxgdc"]
+
+[ext_resource type="Script" uid="uid://dfp11jc37p4d3" path="res://asteroid.gd" id="1_p0ukn"]
+[ext_resource type="Texture2D" uid="uid://b4e2mxhqm6h4i" path="res://sprites/sheets/asteroid_explode.png" id="1_u87q6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p0ukn"]
+rough = true
+absorbent = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v33yl"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tki7"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib7ph"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuohh"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gvs5"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc3al"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqa6y"]
+atlas = ExtResource("1_u87q6")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ra4rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v33yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tki7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib7ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuohh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gvs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc3al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqa6y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eow3j"]
+radius = 14.3588
+height = 37.5788
+
+[node name="asteroid" type="RigidBody2D" groups=["asteroid"]]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_p0ukn")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_p0ukn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ra4rb")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 5)
+rotation = 2.0944
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_eow3j")

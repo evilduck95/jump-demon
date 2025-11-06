@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dkjiep6snnnom"]
+
+[ext_resource type="FontFile" uid="uid://ct7oh7nxl7yn4" path="res://fonts/Liebing.ttf" id="1_ifb13"]
+
+[resource]
+font = ExtResource("1_ifb13")
+font_size = 80

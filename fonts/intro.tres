@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://yiq8qk3ynoid"]
+
+[ext_resource type="FontFile" uid="uid://jwscg15pdh6y" path="res://fonts/CiberGotica.otf" id="1_e4reh"]
+
+[resource]
+font = ExtResource("1_e4reh")
+font_size = 160
