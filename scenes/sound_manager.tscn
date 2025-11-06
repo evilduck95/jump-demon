@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://chm72p40prtht"]
+
+[ext_resource type="Script" uid="uid://cl3y6g31q0af1" path="res://scripts/sound_manager.gd" id="1_s6peo"]
+[ext_resource type="AudioStream" uid="uid://c7p4hq30c5lub" path="res://sounds/One Man Symphony - The Bridge - 01 System Shutdown Triggered.mp3" id="2_shlr6"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_s6peo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_shlr6")
+autoplay = true
+bus = &"Music"
