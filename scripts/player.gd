@@ -87,3 +87,5 @@ func die() -> void:
 	await tween.tween_property(self, "modulate:a", 0, 3).finished
 	queue_free()
 	
+
+	

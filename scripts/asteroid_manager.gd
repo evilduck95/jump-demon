@@ -17,6 +17,8 @@ var next_check_time = 5000
 var spawn_delay = 2000
 
 func _process(delta: float) -> void:
+	if GameGlobals.tutorial_active:
+		return
 	var now = Time.get_ticks_msec()
 	if now > next_spawn_time:
 		var asteroid = asteroid_scene.instantiate()

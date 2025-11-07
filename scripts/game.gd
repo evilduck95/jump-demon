@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var credits = $ui/credits
+@onready var credits = $"ui/pause screen"
 
 func _on_credits_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:

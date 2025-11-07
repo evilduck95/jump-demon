@@ -1,0 +1,7 @@
+name: jump-demon
+services:
+    jump-demon:
+        ports:
+            - 8002:80
+        container_name: jump-demon
+        image: jump-demon
