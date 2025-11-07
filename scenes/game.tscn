@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://bkux71cwkm1ww"]
+[gd_scene load_steps=112 format=3 uid="uid://bkux71cwkm1ww"]
 
 [ext_resource type="Script" uid="uid://dqoowk16udiup" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Script" uid="uid://dt7263nc4wbn4" path="res://scripts/background.gd" id="2_rysoc"]
@@ -16,6 +16,7 @@
 [ext_resource type="LabelSettings" uid="uid://yiq8qk3ynoid" path="res://fonts/intro.tres" id="14_suyxu"]
 [ext_resource type="LabelSettings" uid="uid://dkjiep6snnnom" path="res://fonts/space-goth.tres" id="15_sgl2t"]
 [ext_resource type="FontFile" uid="uid://ct7oh7nxl7yn4" path="res://fonts/Liebing.ttf" id="16_qouja"]
+[ext_resource type="Script" uid="uid://c4b58c3s22hkg" path="res://scenes/volume_slider.gd" id="17_rysoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jktm"]
 atlas = ExtResource("6_5newe")
@@ -947,21 +948,21 @@ text = "Jump Demon"
 label_settings = ExtResource("14_suyxu")
 horizontal_alignment = 1
 
-[node name="credits button" type="Node2D" parent="ui"]
+[node name="pause button" type="Node2D" parent="ui"]
 position = Vector2(1680, 1000)
 
-[node name="Area2D" type="Area2D" parent="ui/credits button"]
+[node name="Area2D" type="Area2D" parent="ui/pause button"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ui/credits button/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ui/pause button/Area2D"]
 position = Vector2(104.5, 28)
 shape = SubResource("RectangleShape2D_7sc4i")
 
-[node name="Label" type="Label" parent="ui/credits button"]
+[node name="Label" type="Label" parent="ui/pause button"]
 offset_left = -7.0
 offset_top = -8.0
 offset_right = 157.0
 offset_bottom = 42.0
-text = "Credits"
+text = "Pause"
 label_settings = ExtResource("15_sgl2t")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -969,7 +970,7 @@ vertical_alignment = 1
 [node name="credits" type="Node2D" parent="ui"]
 process_mode = 3
 visible = false
-position = Vector2(160, 424)
+position = Vector2(8, 184)
 
 [node name="music" type="Node2D" parent="ui/credits"]
 
@@ -979,6 +980,7 @@ offset_right = 777.0
 offset_bottom = 80.0
 text = "Background Music: "
 label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
 
 [node name="LinkButton" type="LinkButton" parent="ui/credits/music"]
 offset_left = 768.0
@@ -990,6 +992,111 @@ text = "One Man Symphony"
 underline = 1
 uri = "https://onemansymphony.bandcamp.com/album/the-bridge-free-version-2-songs-attribution-required"
 
+[node name="background" type="Node2D" parent="ui/credits"]
+position = Vector2(0, 88)
+
+[node name="Label" type="Label" parent="ui/credits/background"]
+offset_left = 152.0
+offset_right = 777.0
+offset_bottom = 80.0
+text = "Background Art: "
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="ui/credits/background"]
+offset_left = 768.0
+offset_right = 1432.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_qouja")
+theme_override_font_sizes/font_size = 80
+text = "Generator Deep Fold (Itch.io)"
+underline = 1
+uri = "https://deep-fold.itch.io/space-background-generator"
+
+[node name="ciber gotica" type="Node2D" parent="ui/credits"]
+position = Vector2(0, 176)
+
+[node name="Label" type="Label" parent="ui/credits/ciber gotica"]
+offset_left = 152.0
+offset_right = 777.0
+offset_bottom = 80.0
+text = "Ciber Gotica Font: "
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="ui/credits/ciber gotica"]
+offset_left = 768.0
+offset_right = 1432.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_qouja")
+theme_override_font_sizes/font_size = 80
+text = "Projeto Tipo da Fonte (dafont.com)"
+underline = 1
+uri = "https://www.dafont.com/cibergotica.font"
+
+[node name="leibing" type="Node2D" parent="ui/credits"]
+position = Vector2(0, 264)
+
+[node name="Label" type="Label" parent="ui/credits/leibing"]
+offset_left = 152.0
+offset_right = 777.0
+offset_bottom = 80.0
+text = "Leibing Font: "
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="ui/credits/leibing"]
+offset_left = 768.0
+offset_right = 1432.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_qouja")
+theme_override_font_sizes/font_size = 80
+text = "Peter Weigel (dafont.com)"
+underline = 1
+uri = "https://www.dafont.com/cat-liebing-gotisch.font"
+
+[node name="character art" type="Node2D" parent="ui/credits"]
+position = Vector2(0, 344)
+
+[node name="Label" type="Label" parent="ui/credits/character art"]
+offset_left = 152.0
+offset_right = 777.0
+offset_bottom = 80.0
+text = "Character Sprite: "
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="ui/credits/character art"]
+offset_left = 768.0
+offset_right = 1432.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_qouja")
+theme_override_font_sizes/font_size = 80
+text = "Lucky Loops (itch.io)"
+underline = 1
+uri = "https://lucky-loops.itch.io/character-satyr"
+
+[node name="fire art" type="Node2D" parent="ui/credits"]
+position = Vector2(0, 424)
+
+[node name="Label" type="Label" parent="ui/credits/fire art"]
+offset_left = 152.0
+offset_right = 777.0
+offset_bottom = 80.0
+text = "Fire Sprites: "
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="ui/credits/fire art"]
+offset_left = 768.0
+offset_right = 1432.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_qouja")
+theme_override_font_sizes/font_size = 80
+text = "devkidd (itch.io)"
+underline = 1
+uri = "https://devkidd.itch.io/pixel-fire-asset-pack"
+
 [node name="heading" type="Label" parent="ui/credits"]
 offset_left = 40.0
 offset_top = -136.0
@@ -1000,7 +1107,7 @@ text = "Credits"
 label_settings = ExtResource("15_sgl2t")
 
 [node name="close button" type="Node2D" parent="ui/credits"]
-position = Vector2(1232, -96)
+position = Vector2(616, 552)
 
 [node name="Area2D" type="Area2D" parent="ui/credits/close button"]
 
@@ -1014,8 +1121,72 @@ offset_top = -40.0
 offset_right = 224.0
 offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
-text = "Exit"
+text = "Continue"
 label_settings = ExtResource("15_sgl2t")
+
+[node name="options" type="Control" parent="ui/credits"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1352.0
+offset_top = 432.0
+offset_right = 1392.0
+offset_bottom = 472.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/credits/options"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 40.0
+
+[node name="heading" type="Label" parent="ui/credits/options/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 1
+
+[node name="master volume label" type="Label" parent="ui/credits/options/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+label_settings = ExtResource("15_sgl2t")
+
+[node name="master volume slider" type="HSlider" parent="ui/credits/options/VBoxContainer"]
+modulate = Color(1, 0.352941, 0.254902, 1)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("17_rysoc")
+initial_value = 0.5
+bus_name = "Master"
+
+[node name="music volume label" type="Label" parent="ui/credits/options/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+label_settings = ExtResource("15_sgl2t")
+
+[node name="music volume slider" type="HSlider" parent="ui/credits/options/VBoxContainer"]
+modulate = Color(1, 0.352941, 0.254902, 1)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("17_rysoc")
+initial_value = 1.0
+bus_name = "Music"
+
+[node name="sfx volume label" type="Label" parent="ui/credits/options/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+label_settings = ExtResource("15_sgl2t")
+
+[node name="music volume slider2" type="HSlider" parent="ui/credits/options/VBoxContainer"]
+modulate = Color(1, 0.352941, 0.254902, 1)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("17_rysoc")
+initial_value = 1.0
+bus_name = "SFX"
 
 [node name="tutorial" type="Label" parent="ui"]
 modulate = Color(1, 1, 1, 0)
@@ -1041,5 +1212,5 @@ shape = SubResource("SegmentShape2D_ca42v")
 [connection signal="body_entered" from="asteroid detector" to="ui" method="_on_asteroid_detector_body_entered"]
 [connection signal="body_entered" from="bottom fire pit/fire" to="player" method="_on_fire_body_entered"]
 [connection signal="body_entered" from="top fire pit/fire" to="player" method="_on_fire_body_entered"]
-[connection signal="input_event" from="ui/credits button/Area2D" to="." method="_on_credits_clicked"]
+[connection signal="input_event" from="ui/pause button/Area2D" to="." method="_on_credits_clicked"]
 [connection signal="input_event" from="ui/credits/close button/Area2D" to="." method="_on_credits_close"]

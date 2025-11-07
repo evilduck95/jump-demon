@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		next_spawn_time = now + spawn_delay + rng.randf_range(0, RANDOM_SPAWN_DELAY_SPREAD)
 		if spawn_delay > MIN_SPAWN_DELAY:
 			spawn_delay -= 1500 * delta
-			print(str(spawn_delay))
 		var prev_spawn_position: float = next_spawn_position
 		var next_furthest_spawn_position = prev_spawn_position + (SPAWN_AREA_SIZE - SPAWN_POSITION_MIN_SPREAD)
 		var wanted_spawn_position = prev_spawn_position + rng.randf_range(SPAWN_POSITION_MIN_SPREAD, next_furthest_spawn_position)

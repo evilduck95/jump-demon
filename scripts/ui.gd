@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var pause_button = $"pause button"
 @onready var score_label = $score
 @onready var intro_label = $intro
 @onready var tutorial = $tutorial
@@ -20,16 +21,24 @@ func hide_tutorial():
 	tutorial_platform.queue_free()
 	var tutorial_out_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	return tutorial_out_tween.tween_property(tutorial, "modulate:a", 0, 2).finished
-	
+
+func flip_visibility(node: Node):
+	node.visible = !node.visible
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		credits.visible = !credits.visible
+		flip_visibility(credits)
+		flip_visibility(intro_label)
+		flip_visibility(tutorial)
+		flip_visibility(pause_button)
+		flip_visibility(game_over_screen)
+		if game_over:
+			flip_visibility(score_label)
 		get_tree().paused = !get_tree().paused
 	if GameGlobals.tutorial_active && Input.is_action_just_pressed("fly"):
 		GameGlobals.tutorial_active = false
 		await hide_tutorial()
-			 
+
 func _on_asteroid_detector_body_entered(body: Node2D) -> void:
 	if not game_over:
 		var asteroid_scale = body.get_child(0).scale.x

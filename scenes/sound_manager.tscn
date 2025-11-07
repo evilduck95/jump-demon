@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://c7p4hq30c5lub" path="res://sounds/One Man Symphony - The Bridge - 01 System Shutdown Triggered.mp3" id="2_shlr6"]
 
 [node name="SoundManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_s6peo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
