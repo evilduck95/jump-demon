@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://bkux71cwkm1ww"]
+[gd_scene load_steps=111 format=3 uid="uid://bkux71cwkm1ww"]
 
 [ext_resource type="Script" uid="uid://dqoowk16udiup" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Script" uid="uid://dt7263nc4wbn4" path="res://scripts/background.gd" id="2_rysoc"]
@@ -684,6 +684,9 @@ size = Vector2(229, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80cx4"]
 size = Vector2(249, 108)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ca42v"]
+b = Vector2(331, 0)
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_ca42v")
 
@@ -718,7 +721,7 @@ lock_rotation = true
 continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 1
-linear_damp = 1.0
+linear_damp = 1.5
 script = ExtResource("5_1kice")
 
 [node name="sprite" type="AnimatedSprite2D" parent="player"]
@@ -1013,6 +1016,25 @@ offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
 text = "Exit"
 label_settings = ExtResource("15_sgl2t")
+
+[node name="tutorial" type="Label" parent="ui"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 457.0
+offset_top = 424.0
+offset_right = 2480.0
+offset_bottom = 803.0
+scale = Vector2(0.5, 0.5)
+text = "Avoid the asteroids and fire!
+Hold spacebar to fly"
+label_settings = ExtResource("14_suyxu")
+horizontal_alignment = 1
+
+[node name="temporary platform" type="StaticBody2D" parent="."]
+position = Vector2(0, 845)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temporary platform"]
+shape = SubResource("SegmentShape2D_ca42v")
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]
 [connection signal="dead" from="player" to="ui" method="_on_player_dead"]

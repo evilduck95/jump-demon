@@ -4,7 +4,7 @@ signal dead
 
 @onready var sprite = $sprite
 
-const FLYING_POWER = 1
+const FLYING_POWER = .5  
 const MAX_HEIGHT = 25
 
 var hits = 0
