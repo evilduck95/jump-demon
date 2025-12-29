@@ -3,5 +3,6 @@ services:
     jump-demon:
         ports:
             - 8003:80
+        restart: always
         container_name: jump-demon
         image: jump-demon
