@@ -11,6 +11,7 @@ extends Node2D
 
 var current_score: int = 0
 var game_over = false
+var time_of_death = 0
 
 func _ready() -> void:
 	var intro_tween = create_tween().set_trans(Tween.TRANS_SINE)
@@ -38,11 +39,13 @@ func _process(_delta: float) -> void:
 		if game_over:
 			flip_visibility(score_label)
 		get_tree().paused = !get_tree().paused
-	if GameGlobals.tutorial_active && Input.is_action_just_pressed("fly"):
+	if GameGlobals.tutorial_active and Input.is_action_just_pressed("fly") :
 		GameGlobals.tutorial_active = false
 		await get_tree().create_timer(0.5).timeout
 		hide_tutorial()
-	if game_over and Input.is_action_just_released("confirm"):
+	var time_since_death = Time.get_ticks_msec() - time_of_death
+	if game_over and time_since_death > 3000 and Input.is_action_just_released("confirm"):
+		GameGlobals.tutorial_active = true
 		get_tree().reload_current_scene()
 
 func _on_asteroid_detector_body_entered(body: Node2D) -> void:
@@ -54,6 +57,7 @@ func _on_asteroid_detector_body_entered(body: Node2D) -> void:
 func _on_player_dead() -> void:
 	save_score(current_score)
 	game_over = true
+	time_of_death = Time.get_ticks_msec()
 	var game_over_screen_tween = create_tween().set_trans(Tween.TRANS_SINE)
 	game_over_screen_tween.tween_property(game_over_screen, "modulate:a", 1, 3)
 	var score_tween = create_tween().set_trans(Tween.TRANS_CUBIC)

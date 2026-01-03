@@ -935,7 +935,7 @@ offset_left = 688.0
 offset_top = 792.0
 offset_right = 1295.0
 offset_bottom = 872.0
-text = "Press enter to restart"
+text = "Click to restart"
 label_settings = ExtResource("15_sgl2t")
 horizontal_alignment = 1
 
@@ -958,10 +958,67 @@ label_settings = ExtResource("15_sgl2t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="score" type="Label" parent="ui"]
+offset_left = 1360.0
+offset_top = 40.0
+offset_right = 1705.0
+offset_bottom = 140.0
+scale = Vector2(1.5, 1.5)
+text = "Score 0"
+label_settings = ExtResource("15_sgl2t")
+horizontal_alignment = 2
+
+[node name="intro" type="Label" parent="ui"]
+offset_top = 426.0
+offset_right = 1919.0
+offset_bottom = 620.0
+text = "Jump Demon"
+label_settings = ExtResource("14_suyxu")
+horizontal_alignment = 1
+
+[node name="tutorial" type="Label" parent="ui"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 345.0
+offset_top = 424.0
+offset_right = 2788.0
+offset_bottom = 803.0
+scale = Vector2(0.5, 0.5)
+text = "Avoid the asteroids and space fire!
+Hold spacebar or click to fly"
+label_settings = ExtResource("14_suyxu")
+horizontal_alignment = 1
+
 [node name="pause screen" type="Node2D" parent="ui"]
 process_mode = 3
 visible = false
 position = Vector2(-8, 184)
+
+[node name="background" type="Sprite2D" parent="ui/pause screen"]
+modulate = Color(0, 0, 0, 0.87058824)
+position = Vector2(976.75, 361)
+scale = Vector2(7.6568627, 5.616162)
+texture = ExtResource("4_264po")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": false,
+"pending_changes": {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "",
+"source_uid": -1
+}
+}
 
 [node name="credits" type="Node2D" parent="ui/pause screen"]
 
@@ -1191,36 +1248,6 @@ offset_top = 744.0
 offset_right = 576.0
 offset_bottom = 824.0
 label_settings = ExtResource("15_sgl2t")
-
-[node name="score" type="Label" parent="ui"]
-offset_left = 1360.0
-offset_top = 40.0
-offset_right = 1705.0
-offset_bottom = 140.0
-scale = Vector2(1.5, 1.5)
-text = "Score 0"
-label_settings = ExtResource("15_sgl2t")
-horizontal_alignment = 2
-
-[node name="intro" type="Label" parent="ui"]
-offset_top = 426.0
-offset_right = 1919.0
-offset_bottom = 620.0
-text = "Jump Demon"
-label_settings = ExtResource("14_suyxu")
-horizontal_alignment = 1
-
-[node name="tutorial" type="Label" parent="ui"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 345.0
-offset_top = 424.0
-offset_right = 2788.0
-offset_bottom = 803.0
-scale = Vector2(0.5, 0.5)
-text = "Avoid the asteroids and space fire!
-Hold spacebar or click to fly"
-label_settings = ExtResource("14_suyxu")
-horizontal_alignment = 1
 
 [node name="intro platform" type="StaticBody2D" parent="."]
 position = Vector2(0, 845)
