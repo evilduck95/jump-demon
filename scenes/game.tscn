@@ -1187,9 +1187,9 @@ bus_name = "SFX"
 
 [node name="high score" type="Label" parent="ui/pause screen"]
 offset_left = 24.0
-offset_top = 808.0
+offset_top = 744.0
 offset_right = 576.0
-offset_bottom = 888.0
+offset_bottom = 824.0
 label_settings = ExtResource("15_sgl2t")
 
 [node name="score" type="Label" parent="ui"]
