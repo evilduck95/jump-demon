@@ -8,22 +8,27 @@ process_mode = 3
 script = ExtResource("1_s6peo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="Song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_shlr6")
-volume_db = -18.0
+volume_db = -9.0
 autoplay = true
 bus = &"Music"
