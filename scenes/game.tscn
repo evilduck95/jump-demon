@@ -1203,7 +1203,6 @@ label_settings = ExtResource("15_sgl2t")
 horizontal_alignment = 2
 
 [node name="intro" type="Label" parent="ui"]
-visible = false
 offset_top = 426.0
 offset_right = 1919.0
 offset_bottom = 620.0
@@ -1212,6 +1211,7 @@ label_settings = ExtResource("14_suyxu")
 horizontal_alignment = 1
 
 [node name="tutorial" type="Label" parent="ui"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 345.0
 offset_top = 424.0
 offset_right = 2788.0

@@ -6,7 +6,7 @@ extends Node2D
 @onready var tutorial = $tutorial
 @onready var game_over_screen = $"game over screen"
 @onready var pause_screen = $"pause screen"
-@onready var tutorial_platform = $"../temporary platform"
+@onready var tutorial_platform = $"../intro platform"
 @onready var high_score = $"pause screen/high score"
 
 var current_score: int = 0
